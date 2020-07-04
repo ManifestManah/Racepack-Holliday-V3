@@ -7,7 +7,7 @@ block damage
 {
 	ifx true(wcs_race_debugging) do
 	{
-		es_log [Race]: Squirtle - [Block] Skill: 1 (START)
+		wcs_log -1 [Race]: Squirtle - [Block] Skill: 1 (START)
 	}
 	if (server_var(wcs_dice) <= server_var(wcs_chance)) do
 	{
@@ -37,7 +37,7 @@ block damage
 	}
 	ifx true(wcs_race_debugging) do
 	{
-		es_log [Race]: Squirtle - [Block] Skill: 1 (END)
+		wcs_log -1 [Race]: Squirtle - [Block] Skill: 1 (END)
 	}
 }
 
@@ -45,7 +45,7 @@ block slow
 {
 	ifx true(wcs_race_debugging) do
 	{
-		es_log [Race]: Squirtle - [Block] Skill: 2 (START)
+		wcs_log -1 [Race]: Squirtle - [Block] Skill: 2 (START)
 	}
 	if (server_var(wcs_dice2) <= server_var(wcs_chance)) do
 	{
@@ -68,7 +68,7 @@ block slow
 	}
 	ifx true(wcs_race_debugging) do
 	{
-		es_log [Race]: Squirtle - [Block] Skill: 2 (END)
+		wcs_log -1 [Race]: Squirtle - [Block] Skill: 2 (END)
 	}
 }
 
@@ -76,7 +76,7 @@ block freeze
 {
 	ifx true(wcs_race_debugging) do
 	{
-		es_log [Race]: Squirtle - [Block] Skill: 3 (START)
+		wcs_log -1 [Race]: Squirtle - [Block] Skill: 3 (START)
 	}
 	if (server_var(wcs_dice3) <= server_var(wcs_chance)) do
 	{
@@ -134,7 +134,7 @@ block freeze
 	}
 	ifx true(wcs_race_debugging) do
 	{
-		es_log [Race]: Squirtle - [Block] Skill: 3 (END)
+		wcs_log -1 [Race]: Squirtle - [Block] Skill: 3 (END)
 	}
 }
 
@@ -142,7 +142,7 @@ block godmode
 {
 	ifx true(wcs_race_debugging) do
 	{
-		es_log [Race]: Squirtle - [Block] Skill: 4 (START)
+		wcs_log -1 [Race]: Squirtle - [Block] Skill: 4 (START)
 	}
 	es wcsgroup get is_paralyzed wcs_tmp3 server_var(wcs_userid)
 	if (server_var(wcs_tmp3) == 0) do
@@ -169,6 +169,6 @@ block godmode
 	}
 	ifx true(wcs_race_debugging) do
 	{
-		es_log [Race]: Squirtle - [Block] Skill: 4 (END)
+		wcs_log -1 [Race]: Squirtle - [Block] Skill: 4 (END)
 	}
 }

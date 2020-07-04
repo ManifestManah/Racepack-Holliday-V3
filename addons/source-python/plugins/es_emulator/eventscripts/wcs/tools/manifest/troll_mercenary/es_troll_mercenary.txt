@@ -7,13 +7,13 @@ block death
 {
 	ifx true(wcs_race_debugging) do
 	{
-		es_log [Race]: Troll Mercenary - [Block] Death (START)
+		wcs_log -1 [Race]: Troll Mercenary - [Block] Death (START)
 	}
 	es wcsgroup set troll_nades event_var(userid) 0
 	es wcsgroup set troll_explosives event_var(userid) 0
 	ifx true(wcs_race_debugging) do
 	{
-		es_log [Race]: Troll Mercenary - [Block] Death (END)
+		wcs_log -1 [Race]: Troll Mercenary - [Block] Death (END)
 	}
 }
 
@@ -21,13 +21,13 @@ block onchange
 {
 	ifx true(wcs_race_debugging) do
 	{
-		es_log [Race]: Troll Mercenary - [Block] OnChange (START)
+		wcs_log -1 [Race]: Troll Mercenary - [Block] OnChange (START)
 	}
 	es wcsgroup set troll_nades server_var(wcs_userid) 0
 	es wcsgroup set troll_explosives server_var(wcs_userid) 0
 	ifx true(wcs_race_debugging) do
 	{
-		es_log [Race]: Troll Mercenary - [Block] OnChange (END)
+		wcs_log -1 [Race]: Troll Mercenary - [Block] OnChange (END)
 	}
 }
 
@@ -35,7 +35,7 @@ block shot
 {
 	ifx true(wcs_race_debugging) do
 	{
-		es_log [Race]: Troll Mercenary - [Block] Skill: 1 (START)
+		wcs_log -1 [Race]: Troll Mercenary - [Block] Skill: 1 (START)
 	}
 	if (server_var(wcs_dice) <= server_var(wcs_chance)) do
 	{
@@ -65,7 +65,7 @@ block shot
 	}
 	ifx true(wcs_race_debugging) do
 	{
-		es_log [Race]: Troll Mercenary - [Block] Skill: 1 (END)
+		wcs_log -1 [Race]: Troll Mercenary - [Block] Skill: 1 (END)
 	}
 }
 
@@ -73,14 +73,14 @@ block health
 {
 	ifx true(wcs_race_debugging) do
 	{
-		es_log [Race]: Troll Mercenary - [Block] Skill: 2 (START)
+		wcs_log -1 [Race]: Troll Mercenary - [Block] Skill: 2 (START)
 	}
 	es wcs_setfx health event_var(userid) + server_var(wcs_addhealth) 0
 	es_delayed 1 wcs_setfx armor event_var(userid) = server_var(wcs_armor) 0
 	es_tell event_var(userid) #multi #green [WCS]: #lightgreen Troll skin - Gave you server_var(wcs_armor) armor and server_var(wcs_addhealth) health
 	ifx true(wcs_race_debugging) do
 	{
-		es_log [Race]: Troll Mercenary - [Block] Skill: 2 (END)
+		wcs_log -1 [Race]: Troll Mercenary - [Block] Skill: 2 (END)
 	}
 }
 
@@ -88,7 +88,7 @@ block nade
 {
 	ifx true(wcs_race_debugging) do
 	{
-		es_log [Race]: Troll Mercenary - [Block] Skill: 3 (START)
+		wcs_log -1 [Race]: Troll Mercenary - [Block] Skill: 3 (START)
 	}
 	es wcsgroup set troll_nades event_var(userid) server_var(wcs_range)
 	es_delayed 1 es_give event_var(userid) weapon_flashbang
@@ -97,7 +97,7 @@ block nade
 	es_tell event_var(userid) #multi #green [WCS]: #lightgreen Grenade skills - You've recieved grenades with unique skills
 	ifx true(wcs_race_debugging) do
 	{
-		es_log [Race]: Troll Mercenary - [Block] Skill: 3 (END)
+		wcs_log -1 [Race]: Troll Mercenary - [Block] Skill: 3 (END)
 	}
 }
 
@@ -108,7 +108,7 @@ event weapon_fire
 	{
 		ifx true(wcs_race_debugging) do
 		{
-			es_log [Race]: Troll Mercenary - [Block] Event Weapon_Fire (START)
+			wcs_log -1 [Race]: Troll Mercenary - [Block] Event Weapon_Fire (START)
 		}
 		if (event_var(weapon) == weapon_flashbang) do
 		{
@@ -124,7 +124,7 @@ event weapon_fire
 		}
 		ifx true(wcs_race_debugging) do
 		{
-			es_log [Race]: Troll Mercenary - [Block] Event Weapon_Fire (END)
+			wcs_log -1 [Race]: Troll Mercenary - [Block] Event Weapon_Fire (END)
 		}
 	}
 }
@@ -136,7 +136,7 @@ event smokegrenade_detonate
 	{
 		ifx true(wcs_race_debugging) do
 		{
-			es_log [Race]: Troll Mercenary - [Block] Event Smokegrenade_Detonate (START)
+			wcs_log -1 [Race]: Troll Mercenary - [Block] Event Smokegrenade_Detonate (START)
 		}
 		if (server_var(wcs_y10) == 1) then es wcs_removeweapon event_var(userid) 4
 		es_xmath wcs_y10 - 1
@@ -166,7 +166,7 @@ event smokegrenade_detonate
 		es_delayed 16.5 es_fire event_var(userid) server_var(ss_name) kill
 		ifx true(wcs_race_debugging) do
 		{
-			es_log [Race]: Troll Mercenary - [Block] Event Smokegrenade_Detonate (END)
+			wcs_log -1 [Race]: Troll Mercenary - [Block] Event Smokegrenade_Detonate (END)
 		}
 	}
 }
@@ -178,7 +178,7 @@ event hegrenade_detonate
 	{
 		ifx true(wcs_race_debugging) do
 		{
-			es_log [Race]: Troll Mercenary - [Block] Event Hegrenade_Detonate (START)
+			wcs_log -1 [Race]: Troll Mercenary - [Block] Event Hegrenade_Detonate (START)
 		}
 		if (server_var(wcs_y10) == 1) then es wcs_removeweapon event_var(userid) 4
 		es_xmath wcs_y10 - 1
@@ -198,7 +198,7 @@ event hegrenade_detonate
 		es_delayed 8 es_fire event_var(userid) troll_fire kill
 		ifx true(wcs_race_debugging) do
 		{
-			es_log [Race]: Troll Mercenary - [Block] Event Hegrenade_Detonate (END)
+			wcs_log -1 [Race]: Troll Mercenary - [Block] Event Hegrenade_Detonate (END)
 		}
 	}
 }
@@ -210,7 +210,7 @@ event flashbang_detonate
 	{
 		ifx true(wcs_race_debugging) do
 		{
-			es_log [Race]: Troll Mercenary - [Block] Event Flashbang_Detonate (START)
+			wcs_log -1 [Race]: Troll Mercenary - [Block] Event Flashbang_Detonate (START)
 		}
 		if (server_var(wcs_y10) == 1) then es wcs_removeweapon event_var(userid) 4
 		es_xmath wcs_y10 - 1
@@ -235,7 +235,7 @@ event flashbang_detonate
 		es_delayed 7 es_fire event_var(userid) server_var(ss_name) kill
 		ifx true(wcs_race_debugging) do
 		{
-			es_log [Race]: Troll Mercenary - [Block] Event Flashbang_Detonate (END)
+			wcs_log -1 [Race]: Troll Mercenary - [Block] Event Flashbang_Detonate (END)
 		}
 	}
 }
@@ -244,7 +244,7 @@ block explosive
 {
 	ifx true(wcs_race_debugging) do
 	{
-		es_log [Race]: Troll Mercenary - [Block] Skill: 4 (START)
+		wcs_log -1 [Race]: Troll Mercenary - [Block] Skill: 4 (START)
 	}
 	es wcsgroup set troll_explosives server_var(wcs_userid) server_var(wcs_z10)
 	es_tell server_var(wcs_userid) #multi #green [WCS]: #lightgreen Explosive shot - You have server_var(wcs_z10) explosive bullets for 5 seconds
@@ -252,7 +252,7 @@ block explosive
 	es_delayed 3 wcs_centertell server_var(wcs_userid) Explosive bullets are no longer available"
 	ifx true(wcs_race_debugging) do
 	{
-		es_log [Race]: Troll Mercenary - [Block] Skill: 4 (END)
+		wcs_log -1 [Race]: Troll Mercenary - [Block] Skill: 4 (END)
 	}
 }
 
@@ -263,7 +263,7 @@ event bullet_impact
 	{
 		ifx true(wcs_race_debugging) do
 		{
-			es_log [Race]: Troll Mercenary - [Block] Event Bullet_Impact (START)
+			wcs_log -1 [Race]: Troll Mercenary - [Block] Event Bullet_Impact (START)
 		}
 		es_getgame wcs_gamecheck
 		if ("Counter-Strike: Source" in server_var(wcs_gamecheck)) do
@@ -293,7 +293,7 @@ event bullet_impact
 		es est_effect_20 #a 0 sprites/lgtning.vmt server_var(vector2) 1 10 5 200 10 event_var(x) event_var(y) event_var(z) metal
 		ifx true(wcs_race_debugging) do
 		{
-			es_log [Race]: Troll Mercenary - [Block] Event Bullet_Impact (END)
+			wcs_log -1 [Race]: Troll Mercenary - [Block] Event Bullet_Impact (END)
 		}
 	}
 }

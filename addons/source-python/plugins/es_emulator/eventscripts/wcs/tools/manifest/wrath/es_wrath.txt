@@ -7,7 +7,7 @@ block spawn
 {
 	ifx true(wcs_race_debugging) do
 	{
-		es_log [Race]: Hell Wrath - [Block] Spawn (START)
+		wcs_log -1 [Race]: Hell Wrath - [Block] Spawn (START)
 	}
 	es wcs_setcooldown event_var(userid) 5
 	es_getgame wcs_gamecheck
@@ -30,7 +30,7 @@ block spawn
 	es_delayed .3 es est_effect_14 #a 0 effects/fire_cloud2.vmt server_var(vector2) server_var(vector1) 100 100 1000
 	ifx true(wcs_race_debugging) do
 	{
-		es_log [Race]: Hell Wrath - [Block] Spawn (END)
+		wcs_log -1 [Race]: Hell Wrath - [Block] Spawn (END)
 	}
 }
 
@@ -38,7 +38,7 @@ block wrath
 {
 	ifx true(wcs_race_debugging) do
 	{
-		es_log [Race]: Hell Wrath - [Block] Skill: 1 (START)
+		wcs_log -1 [Race]: Hell Wrath - [Block] Skill: 1 (START)
 	}
 	if (event_var(es_userdead) = 0) do
 	{
@@ -142,7 +142,7 @@ block wrath
 	}
 	ifx true(wcs_race_debugging) do
 	{
-		es_log [Race]: Hell Wrath - [Block] Skill: 1 (END)
+		wcs_log -1 [Race]: Hell Wrath - [Block] Skill: 1 (END)
 	}
 }
 
@@ -150,7 +150,7 @@ block explosive_bomb
 {
 	ifx true(wcs_race_debugging) do
 	{
-		es_log [Race]: Hell Wrath - [Block] Skill: 2 (START)
+		wcs_log -1 [Race]: Hell Wrath - [Block] Skill: 2 (START)
 	}
 	if (event_var(es_userdead) = 0) do
 	{
@@ -225,7 +225,7 @@ block explosive_bomb
 	}
 	ifx true(wcs_race_debugging) do
 	{
-		es_log [Race]: Hell Wrath - [Block] Skill: 2 (END)
+		wcs_log -1 [Race]: Hell Wrath - [Block] Skill: 2 (END)
 	}
 }
 
@@ -233,7 +233,7 @@ block wcs_ulti_suicide_checks
 {
 	ifx true(wcs_race_debugging) do
 	{
-		es_log [Race]: Hell Wrath - [Block] Skill: 2 (CHECKS START)
+		wcs_log -1 [Race]: Hell Wrath - [Block] Skill: 2 (CHECKS START)
 	}
 	es_exists ex userid server_var(wcs_targetid)
 	if (server_var(ex) = 1) do
@@ -277,7 +277,7 @@ block wcs_ulti_suicide_checks
 	}
 	ifx true(wcs_race_debugging) do
 	{
-		es_log [Race]: Hell Wrath - [Block] Skill: 2 (CHECKS END)
+		wcs_log -1 [Race]: Hell Wrath - [Block] Skill: 2 (CHECKS END)
 	}
 }
 
@@ -285,7 +285,7 @@ block wcs_ulti_suicide_final
 {
 	ifx true(wcs_race_debugging) do
 	{
-		es_log [Race]: Hell Wrath - [Block] Skill: 2 (EXECUTED START)
+		wcs_log -1 [Race]: Hell Wrath - [Block] Skill: 2 (EXECUTED START)
 	}
 	es wcs_centertell server_var(wcs_targetid) You took server_var(wcs_magnitude) damage from an Explosion
 	es_xrand wcs_rand 1 3
@@ -304,7 +304,7 @@ block wcs_ulti_suicide_final
 	es damage server_var(wcs_targetid) server_var(wcs_magnitude) 1 event_var(userid)
 	ifx true(wcs_race_debugging) do
 	{
-		es_log [Race]: Hell Wrath - [Block] Skill: 2 (EXECUTED END)
+		wcs_log -1 [Race]: Hell Wrath - [Block] Skill: 2 (EXECUTED END)
 	}
 }
 
@@ -312,7 +312,7 @@ block dismembering
 {
 	ifx true(wcs_race_debugging) do
 	{
-		es_log [Race]: Hell Wrath - [Block] Skill: 3 (START)
+		wcs_log -1 [Race]: Hell Wrath - [Block] Skill: 3 (START)
 	}
 	if (server_var(wcs_dice3) <= server_var(wcs_chance)) do
 	{
@@ -347,7 +347,7 @@ block dismembering
 	}
 	ifx true(wcs_race_debugging) do
 	{
-		es_log [Race]: Hell Wrath - [Block] Skill: 3 (END)
+		wcs_log -1 [Race]: Hell Wrath - [Block] Skill: 3 (END)
 	}
 }
 
@@ -355,7 +355,7 @@ block hellwrath
 {
 	ifx true(wcs_race_debugging) do
 	{
-		es_log [Race]: Hell Wrath - [Block] Skill: 4 (START)
+		wcs_log -1 [Race]: Hell Wrath - [Block] Skill: 4 (START)
 	}
 	es_getplayerlocation wcs_x1 wcs_y1 wcs_z1 server_var(wcs_userid)
 	es_xmath wcs_z1 + 35
@@ -441,7 +441,7 @@ block hellwrath
 	if (server_var(wcs_ultinotexec) = 1) then es wcs_cancelulti server_var(wcs_userid)
 	ifx true(wcs_race_debugging) do
 	{
-		es_log [Race]: Hell Wrath - [Block] Skill: 4 (END)
+		wcs_log -1 [Race]: Hell Wrath - [Block] Skill: 4 (END)
 	}
 }
 
@@ -449,7 +449,7 @@ block wcs_ulti_suicide_ultimate_checks
 {
 	ifx true(wcs_race_debugging) do
 	{
-		es_log [Race]: Hell Wrath - [Block] Skill: 4 (CHECKS START)
+		wcs_log -1 [Race]: Hell Wrath - [Block] Skill: 4 (CHECKS START)
 	}
 	es_exists ex userid server_var(wcs_targetid)
 	if (server_var(ex) = 1) do
@@ -496,7 +496,7 @@ block wcs_ulti_suicide_ultimate_checks
 	}
 	ifx true(wcs_race_debugging) do
 	{
-		es_log [Race]: Hell Wrath - [Block] Skill: 4 (CHECKS END)
+		wcs_log -1 [Race]: Hell Wrath - [Block] Skill: 4 (CHECKS END)
 	}
 }
 
@@ -504,7 +504,7 @@ block wcs_ulti_suicide_ultimate_final
 {
 	ifx true(wcs_race_debugging) do
 	{
-		es_log [Race]: Hell Wrath - [Block] Skill: 4 (EXECUTED START)
+		wcs_log -1 [Race]: Hell Wrath - [Block] Skill: 4 (EXECUTED START)
 	}
 	es wcs_centertell server_var(wcs_targetid) You took server_var(wcs_magnitude) damage from someone's Wrath
 	es_xrand wcs_rand 1 3
@@ -523,6 +523,6 @@ block wcs_ulti_suicide_ultimate_final
 	es damage server_var(wcs_targetid) server_var(wcs_magnitude) 1 server_var(wcs_userid)
 	ifx true(wcs_race_debugging) do
 	{
-		es_log [Race]: Hell Wrath - [Block] Skill: 4 (EXECUTED END)
+		wcs_log -1 [Race]: Hell Wrath - [Block] Skill: 4 (EXECUTED END)
 	}
 }
