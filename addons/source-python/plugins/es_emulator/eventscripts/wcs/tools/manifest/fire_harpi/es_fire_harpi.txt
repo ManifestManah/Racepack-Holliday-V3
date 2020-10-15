@@ -7,7 +7,7 @@ block spawn
 {
 	ifx true(wcs_race_debugging) do
 	{
-		wcs_log -1 [Race]: Fire Harpi - [Block] Spawn (START)
+		wcs_log [Race]: Fire Harpi - [Block] Spawn (START)
 	}
 	es_delayed .5 wcs_color event_var(userid) 230 10 10 255 1
 	es_getplayerlocation wcs_x1 wcs_y1 wcs_z1 event_var(userid)
@@ -17,7 +17,7 @@ block spawn
 	es est_effect 10 #a 0 sprites/lgtning.vmt server_var(wcs_x1) server_var(wcs_y1) server_var(wcs_z1) 75 500 3 60 10 0 255 0 0 255 6
 	ifx true(wcs_race_debugging) do
 	{
-		wcs_log -1 [Race]: Fire Harpi - [Block] Spawn (END)
+		wcs_log [Race]: Fire Harpi - [Block] Spawn (END)
 	}
 }
 
@@ -25,7 +25,7 @@ block finish
 {
 	ifx true(wcs_race_debugging) do
 	{
-		wcs_log -1 [Race]: Fire Harpi - [Block] Skill: 1 (START)
+		wcs_log [Race]: Fire Harpi - [Block] Skill: 1 (START)
 	}
 	if (server_var(wcs_dice) <= server_var(wcs_chance)) do
 	{
@@ -39,9 +39,6 @@ block finish
 				es_delayed 1 wcsgroup set is_frozen event_var(userid) 0
 				es_delayed .1 wcs_teleport event_var(userid) server_var(wcs_x1) server_var(wcs_y1) server_var(wcs_z1)
 				es_delayed .1 wcs_setfx freeze event_var(userid) = 1 1
-				es_delayed .3 wcs_setfx speed event_var(userid) + .25 0
-				es_delayed .3 wcs_setfx health event_var(userid) + 75 0
-				es_delayed .3 wcs_setfx gravity event_var(userid) - .1 0
 				es_delayed .5 playerget health wcs_addhealth event_var(userid)
 				es_delayed 1 damage event_var(userid) server_var(wcs_addhealth) 1 event_var(attacker)
 				es_tell event_var(userid) #multi #green [WCS]: #lightgreen Finish him - You got respawned to get finished off!
@@ -52,7 +49,7 @@ block finish
 	}
 	ifx true(wcs_race_debugging) do
 	{
-		wcs_log -1 [Race]: Fire Harpi - [Block] Skill: 1 (END)
+		wcs_log [Race]: Fire Harpi - [Block] Skill: 1 (END)
 	}
 }
 
@@ -60,7 +57,7 @@ block invis
 {
 	ifx true(wcs_race_debugging) do
 	{
-		wcs_log -1 [Race]: Fire Harpi - [Block] Skill: 2 (START)
+		wcs_log [Race]: Fire Harpi - [Block] Skill: 2 (START)
 	}
 	if (server_var(wcs_dice2) <= server_var(wcs_chance)) do
 	{
@@ -78,7 +75,7 @@ block invis
 	}
 	ifx true(wcs_race_debugging) do
 	{
-		wcs_log -1 [Race]: Fire Harpi - [Block] Skill: 2 (END)
+		wcs_log [Race]: Fire Harpi - [Block] Skill: 2 (END)
 	}
 }
 
@@ -86,7 +83,7 @@ block damage
 {
 	ifx true(wcs_race_debugging) do
 	{
-		wcs_log -1 [Race]: Fire Harpi - [Block] Skill: 3 (START)
+		wcs_log [Race]: Fire Harpi - [Block] Skill: 3 (START)
 	}
 	if (server_var(wcs_dice3) <= server_var(wcs_chance)) do
 	{
@@ -104,7 +101,7 @@ block damage
 	}
 	ifx true(wcs_race_debugging) do
 	{
-		wcs_log -1 [Race]: Fire Harpi - [Block] Skill: 3 (END)
+		wcs_log [Race]: Fire Harpi - [Block] Skill: 3 (END)
 	}
 }
 
@@ -112,7 +109,7 @@ block curse
 {
 	ifx true(wcs_race_debugging) do
 	{
-		wcs_log -1 [Race]: Fire Harpi - [Block] Skill: 4 (START)
+		wcs_log [Race]: Fire Harpi - [Block] Skill: 4 (START)
 	}
 	es_getplayerteam wcs_team server_var(wcs_userid)
 	if (server_var(wcs_team) = 2) do
@@ -149,7 +146,7 @@ block curse
 	if (server_var(wcs_ultinotexec) = 1) then es wcs_cancelulti server_var(wcs_userid)
 	ifx true(wcs_race_debugging) do
 	{
-		wcs_log -1 [Race]: Fire Harpi - [Block] Skill: 4 (END)
+		wcs_log [Race]: Fire Harpi - [Block] Skill: 4 (END)
 	}
 }
 
@@ -157,7 +154,7 @@ block ultimate_checks
 {
 	ifx true(wcs_race_debugging) do
 	{
-		wcs_log -1 [Race]: Fire Harpi - [Block] Skill: 4 (CHECKS START)
+		wcs_log [Race]: Fire Harpi - [Block] Skill: 4 (CHECKS START)
 	}
 	es_exists ex userid server_var(wcs_targetid)
 	if (server_var(ex) = 1) do
@@ -180,7 +177,7 @@ block ultimate_checks
 	}
 	ifx true(wcs_race_debugging) do
 	{
-		wcs_log -1 [Race]: Fire Harpi - [Block] Skill: 4 (CHECKS END)
+		wcs_log [Race]: Fire Harpi - [Block] Skill: 4 (CHECKS END)
 	}
 }
 
@@ -188,7 +185,7 @@ block ultimate_final
 {
 	ifx true(wcs_race_debugging) do
 	{
-		wcs_log -1 [Race]: Fire Harpi - [Block] Skill: 4 (EXECUTED START)
+		wcs_log [Race]: Fire Harpi - [Block] Skill: 4 (EXECUTED START)
 	}
 	es damage server_var(wcs_targetid) server_var(wcs_dmg) 1 server_var(wcs_userid)
 	es wcs_centertell server_var(wcs_userid) Fire harpi's curse dealt server_var(wcs_dmg) damage!
@@ -199,6 +196,6 @@ block ultimate_final
 	es est_effect 10 #a 0 sprites/lgtning.vmt server_var(wcs_x1) server_var(wcs_y1) server_var(wcs_z1) 75 300 1 60 10 0 255 15 5 255 10
 	ifx true(wcs_race_debugging) do
 	{
-		wcs_log -1 [Race]: Fire Harpi - [Block] Skill: 4 (EXECUTED END)
+		wcs_log [Race]: Fire Harpi - [Block] Skill: 4 (EXECUTED END)
 	}
 }

@@ -7,12 +7,12 @@ block spawn
 {
 	ifx true(wcs_race_debugging) do
 	{
-		wcs_log -1 [Race]: Dwarf Warrior - [Block] Spawn (START)
+		wcs_log [Race]: Dwarf Warrior - [Block] Spawn (START)
 	}
 	es wcsgroup set headshot_immunity event_var(userid) 0
 	ifx true(wcs_race_debugging) do
 	{
-		wcs_log -1 [Race]: Dwarf Warrior - [Block] Spawn (END)
+		wcs_log [Race]: Dwarf Warrior - [Block] Spawn (END)
 	}
 }
 
@@ -20,12 +20,12 @@ block death
 {
 	ifx true(wcs_race_debugging) do
 	{
-		wcs_log -1 [Race]: Dwarf Warrior - [Block] Death (START)
+		wcs_log [Race]: Dwarf Warrior - [Block] Death (START)
 	}
 	es wcsgroup set headshot_immunity event_var(userid) 0
 	ifx true(wcs_race_debugging) do
 	{
-		wcs_log -1 [Race]: Dwarf Warrior - [Block] Death (END)
+		wcs_log [Race]: Dwarf Warrior - [Block] Death (END)
 	}
 }
 
@@ -33,12 +33,12 @@ block onchange
 {
 	ifx true(wcs_race_debugging) do
 	{
-		wcs_log -1 [Race]: Dwarf Warrior - [Block] OnChange (START)
+		wcs_log [Race]: Dwarf Warrior - [Block] OnChange (START)
 	}
 	es wcsgroup set headshot_immunity server_var(wcs_userid) 0
 	ifx true(wcs_race_debugging) do
 	{
-		wcs_log -1 [Race]: Dwarf Warrior - [Block] OnChange (END)
+		wcs_log [Race]: Dwarf Warrior - [Block] OnChange (END)
 	}
 }
 
@@ -46,7 +46,7 @@ block push
 {
 	ifx true(wcs_race_debugging) do
 	{
-		wcs_log -1 [Race]: Dwarf Warrior - [Block] Skill: 1 (START)
+		wcs_log [Race]: Dwarf Warrior - [Block] Skill: 1 (START)
 	}
 	if (server_var(wcs_dice) <= server_var(wcs_chance)) do
 	{
@@ -85,7 +85,7 @@ block push
 	}
 	ifx true(wcs_race_debugging) do
 	{
-		wcs_log -1 [Race]: Dwarf Warrior - [Block] Skill: 1 (END)
+		wcs_log [Race]: Dwarf Warrior - [Block] Skill: 1 (END)
 	}
 }
 
@@ -93,7 +93,7 @@ block fast
 {
 	ifx true(wcs_race_debugging) do
 	{
-		wcs_log -1 [Race]: Dwarf Warrior - [Block] Skill: 2 (START)
+		wcs_log [Race]: Dwarf Warrior - [Block] Skill: 2 (START)
 	}
 	if (server_var(wcs_dice2) <= server_var(wcs_chance)) do
 	{
@@ -114,7 +114,7 @@ block fast
 	}
 	ifx true(wcs_race_debugging) do
 	{
-		wcs_log -1 [Race]: Dwarf Warrior - [Block] Skill: 2 (END)
+		wcs_log [Race]: Dwarf Warrior - [Block] Skill: 2 (END)
 	}
 }
 
@@ -122,7 +122,7 @@ block immortal
 {
 	ifx true(wcs_race_debugging) do
 	{
-		wcs_log -1 [Race]: Dwarf Warrior - [Block] Skill: 3 (START)
+		wcs_log [Race]: Dwarf Warrior - [Block] Skill: 3 (START)
 	}
 	if (server_var(wcs_dice3) <= server_var(wcs_chance)) do
 	{
@@ -152,7 +152,7 @@ block immortal
 	}
 	ifx true(wcs_race_debugging) do
 	{
-		wcs_log -1 [Race]: Dwarf Warrior - [Block] Skill: 3 (END)
+		wcs_log [Race]: Dwarf Warrior - [Block] Skill: 3 (END)
 	}
 }
 
@@ -160,7 +160,7 @@ block effect1
 {
 	ifx true(wcs_race_debugging) do
 	{
-		wcs_log -1 [Race]: Dwarf Warrior - [Block] Skill: 3 (EFFECT1 EXECUTED START)
+		wcs_log [Race]: Dwarf Warrior - [Block] Skill: 3 (EFFECT1 EXECUTED START)
 	}
 	es_getplayerlocation wcs_x1 wcs_y1 wcs_z1 event_var(attacker)
 	es_getplayerlocation wcs_x2 wcs_y2 wcs_z2 event_var(userid)
@@ -173,7 +173,7 @@ block effect1
 	es_delayed .2 est_effect_06 #a 0 sprites/plasmaember.vmt server_var(vector2) server_var(vector1) 100 .3 15 10 10 0 228 28 228 255 100
 	ifx true(wcs_race_debugging) do
 	{
-		wcs_log -1 [Race]: Dwarf Warrior - [Block] Skill: 3 (EFFECT1 EXECUTED END)
+		wcs_log [Race]: Dwarf Warrior - [Block] Skill: 3 (EFFECT1 EXECUTED END)
 	}
 }
 
@@ -181,7 +181,7 @@ block effect2
 {
 	ifx true(wcs_race_debugging) do
 	{
-		wcs_log -1 [Race]: Dwarf Warrior - [Block] Skill: 3 (EFFECT2 EXECUTED START)
+		wcs_log [Race]: Dwarf Warrior - [Block] Skill: 3 (EFFECT2 EXECUTED START)
 	}
 	es_getplayerlocation wcs_x1 wcs_y1 wcs_z1 event_var(attacker)
 	es_getplayerlocation wcs_x2 wcs_y2 wcs_z2 event_var(attacker)
@@ -195,7 +195,7 @@ block effect2
 	es_delayed .8 est_effect_06 #a 0 sprites/bluelight1.vmt server_var(vector1) server_var(vector2) 100 .1 10 15 10 10 228 28 228 255 100
 	ifx true(wcs_race_debugging) do
 	{
-		wcs_log -1 [Race]: Dwarf Warrior - [Block] Skill: 3 (EFFECT2 EXECUTED END)
+		wcs_log [Race]: Dwarf Warrior - [Block] Skill: 3 (EFFECT2 EXECUTED END)
 	}
 }
 
@@ -204,7 +204,7 @@ block shake
 {
 	ifx true(wcs_race_debugging) do
 	{
-		wcs_log -1 [Race]: Dwarf Warrior - [Block] Skill: 4 (START)
+		wcs_log [Race]: Dwarf Warrior - [Block] Skill: 4 (START)
 	}
 	es_xset wcs_execute_ultimate 0
 	es_getplayerteam wcs_team server_var(wcs_userid)
@@ -262,7 +262,7 @@ block shake
 	if (server_var(wcs_ultinotexec) = 1) then es wcs_cancelulti server_var(wcs_userid)
 	ifx true(wcs_race_debugging) do
 	{
-		wcs_log -1 [Race]: Dwarf Warrior - [Block] Skill: 4 (END)
+		wcs_log [Race]: Dwarf Warrior - [Block] Skill: 4 (END)
 	}
 }
 
@@ -270,7 +270,7 @@ block ultimate_path
 {
 	ifx true(wcs_race_debugging) do
 	{
-		wcs_log -1 [Race]: Dwarf Warrior - [Block] Skill: 4 (CHECKS START)
+		wcs_log [Race]: Dwarf Warrior - [Block] Skill: 4 (CHECKS START)
 	}
 	es_exists ex userid server_var(wcs_targetid)
 	if (server_var(ex) = 1) do
@@ -317,7 +317,7 @@ block ultimate_path
 	}
 	ifx true(wcs_race_debugging) do
 	{
-		wcs_log -1 [Race]: Dwarf Warrior - [Block] Skill: 4 (CHECKS END)
+		wcs_log [Race]: Dwarf Warrior - [Block] Skill: 4 (CHECKS END)
 	}
 }
 
@@ -325,7 +325,7 @@ block ultimate_final
 {
 	ifx true(wcs_race_debugging) do
 	{
-		wcs_log -1 [Race]: Dwarf Warrior - [Block] Skill: 4 (EXECUTED START)
+		wcs_log [Race]: Dwarf Warrior - [Block] Skill: 4 (EXECUTED START)
 	}
 	es wcsgroup get is_slowed wcs_tmp3 server_var(wcs_targetid)
 	if (server_var(wcs_tmp3) == 0) do
@@ -361,6 +361,6 @@ block ultimate_final
 	}
 	ifx true(wcs_race_debugging) do
 	{
-		wcs_log -1 [Race]: Dwarf Warrior - [Block] Skill: 4 (EXECUTED END)
+		wcs_log [Race]: Dwarf Warrior - [Block] Skill: 4 (EXECUTED END)
 	}
 }
