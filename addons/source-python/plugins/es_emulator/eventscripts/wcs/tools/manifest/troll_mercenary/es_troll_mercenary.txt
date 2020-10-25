@@ -249,7 +249,7 @@ block explosive
 	es wcsgroup set troll_explosives server_var(wcs_userid) server_var(wcs_z10)
 	es_tell server_var(wcs_userid) #multi #green [WCS]: #lightgreen Explosive shot - You have server_var(wcs_z10) explosive bullets for 5 seconds
 	es_delayed 3 wcsgroup set troll_explosives server_var(wcs_userid) 0
-	es_delayed 3 wcs_centertell server_var(wcs_userid) Explosive bullets are no longer available"
+	es_delayed 3 wcs_centertell server_var(wcs_userid) Explosive bullets are no longer available
 	ifx true(wcs_race_debugging) do
 	{
 		wcs_log [Race]: Troll Mercenary - [Block] Skill: 4 (END)
@@ -281,9 +281,16 @@ event bullet_impact
 		if (server_var(wcs_z10) >= 1) then es wcs_centertell event_var(userid) server_var(wcs_z10) explosive bullets left
 		if (server_var(wcs_z10) == 0) then es wcs_centertell event_var(userid) You've run out of explosive bullets
 		es_xrand wcs_dmg 13 19
-		es_getplayerteam wcs_team event_var(userid)
-		if (server_var(wcs_team) = 2) then es_xset wcs_targetteam #ct
-		if (server_var(wcs_team) = 3) then es_xset wcs_targetteam #t
+		ifx true(wcs_ffa_enabled) do
+		{
+			es_xset wcs_targetteam #alive
+		}
+		ifx false(wcs_ffa_enabled) do
+		{
+			es_getplayerteam wcs_team event_var(userid)
+			if (server_var(wcs_team) = 2) then es_xset wcs_targetteam #ct
+			if (server_var(wcs_team) = 3) then es_xset wcs_targetteam #t
+		}
 		es wcs_nearcoord wcs_player server_var(wcs_targetteam) event_var(x) event_var(y) event_var(z) 100 "es damage server_var(wcs_player) server_var(wcs_dmg) 1 event_var(userid);es_playsound server_var(wcs_player) server_var(wcs_tmp4) 1"
 		es_playsound event_var(userid) weapons/shotgun/shotgun_dbl_fire.wav 1
 		es_getplayerlocation wcs_x1 wcs_y1 wcs_z1 event_var(userid)

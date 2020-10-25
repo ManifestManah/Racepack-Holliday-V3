@@ -70,9 +70,21 @@ block shield
 			{
 				if (event_var(dmg_health) >= 10) do
 				{
-					es_getplayerteam wcs_team event_var(userid)
-					if (server_var(wcs_team) = 2) then wcs_foreach player wcs_userid #t "es_xdoblock wcs/tools/manifest/bloodelf/shieldhp" 
-					if (server_var(wcs_team) = 3) then wcs_foreach player wcs_userid #ct "es_xdoblock wcs/tools/manifest/bloodelf/shieldhp"
+					es_xrand wcs_rand 5 10
+					ifx true(wcs_ffa_enabled) do
+					{
+						es wcs_setfx health event_var(userid) + server_var(wcs_rand) 0
+						es_tell server_var(wcs_userid) #multi #green [WCS]: #lightgreen Power word: Shield - Gave you server_var(wcs_rand) health
+						es_getplayerlocation wcs_x2 wcs_y2 wcs_z2 server_var(wcs_userid)
+						es_xmath wcs_z2 + 40
+						es est_effect 10 #a 0 sprites/cbbl_smoke.vmt server_var(wcs_x2) server_var(wcs_y2) server_var(wcs_z2) 2 16 3 400 200 0 150 10 10 255 0
+					}
+					ifx false(wcs_ffa_enabled) do
+					{
+						es_getplayerteam wcs_team event_var(userid)
+						if (server_var(wcs_team) = 2) then wcs_foreach player wcs_userid #t "es_xdoblock wcs/tools/manifest/bloodelf/shieldhp" 
+						if (server_var(wcs_team) = 3) then wcs_foreach player wcs_userid #ct "es_xdoblock wcs/tools/manifest/bloodelf/shieldhp"
+					}
 				}
 			}
 		}
@@ -89,7 +101,6 @@ block shieldhp
 	{
 		wcs_log [Race]: Blood Elf Priest - [Block] Skill: 4 (SHIELDHP EXECUTED START)
 	}
-	es_xrand wcs_rand 5 10
 	es wcs_setfx health server_var(wcs_userid) + server_var(wcs_rand) 0
 	es_tell server_var(wcs_userid) #multi #green [WCS]: #lightgreen Power word: Shield - Gave all allies server_var(wcs_rand) health
 	es_getplayerlocation wcs_x2 wcs_y2 wcs_z2 server_var(wcs_userid)
