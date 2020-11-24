@@ -1,6 +1,6 @@
 /////////////////////////
 //Holliday V3 Race Pack//
-//Version 1.0.0B       //
+//Version 1.0.1B       //
 /////////////////////////
 
 block spawn
@@ -132,8 +132,8 @@ block damage
 					es wcsgroup set fire_owner event_var(userid) event_var(attacker)
 					es wcs_setfx burn event_var(userid) = 1 3
 					es wcs_centertell event_var(attacker) Holy fire lit set your enemy ablaze!
-					es_playsound event_var(userid) wcs/firecast.wav 1.0
-					es_playsound event_var(attacker) wcs/firecast.wav 1.0
+					es_playsound event_var(userid) wcs/firecast.mp3 1.0
+					es_playsound event_var(attacker) wcs/firecast.mp3 1.0
 					es_getplayerlocation wcs_x1 wcs_y1 wcs_z1 event_var(attacker)
 					es_getplayerlocation wcs_x2 wcs_y2 wcs_z2 event_var(userid)
 					es_xmath wcs_z1 + 50
