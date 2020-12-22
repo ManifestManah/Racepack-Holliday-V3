@@ -1,6 +1,6 @@
 /////////////////////////
 //Holliday V3 Race Pack//
-//Version 1.0.1B       //
+//Version 1.0.2B       //
 /////////////////////////
 
 block spawn
@@ -24,7 +24,7 @@ block spawn
 	}
 	ifx false(wcs_falldamage_compensation) do
 	{
-		es wcsgroup set falldamage event_var(userid) 1
+		es wcsgroup set falldamage event_var(userid) 0
 	}
 	es wcsgroup set blackout event_var(userid) 1
 	es wcsgroup set helicopter event_var(userid) 1
@@ -44,7 +44,7 @@ block death
 	}
 	ifx false(wcs_falldamage_compensation) do
 	{
-		es wcsgroup set falldamage event_var(userid) 1
+		es wcsgroup set falldamage event_var(userid) 0
 	}
 	es wcs_setfx attackspeed event_var(userid) = 1 0
 	es wcsgroup set rotor event_var(userid) 0
@@ -63,7 +63,7 @@ block onchange
 	}
 	ifx false(wcs_falldamage_compensation) do
 	{
-		es wcsgroup set falldamage server_var(wcs_userid) 1
+		es wcsgroup set falldamage server_var(wcs_userid) 0
 	}
 	es wcs_unrestrict server_var(wcs_userid) all
 	es wcsgroup set rotor server_var(wcs_userid) 0
@@ -106,7 +106,7 @@ block jump
 	es wcsgroup set blackoutjump event_var(userid) 1
 	ifx false(wcs_falldamage_compensation) do
 	{
-		es_delayed .5 wcsgroup set falldamage event_var(userid) 0.05
+		es_delayed .5 wcsgroup set falldamage event_var(userid) 0.00
 		es_tell event_var(userid) #multi #green [WCS]: #lightgreen High jump - Boosted your jump height and removed fall damage
 	}
 	ifx true(wcs_falldamage_compensation) do
