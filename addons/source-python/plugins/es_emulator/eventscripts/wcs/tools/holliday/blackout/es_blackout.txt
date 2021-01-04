@@ -24,7 +24,7 @@ block spawn
 	}
 	ifx false(wcs_falldamage_compensation) do
 	{
-		es wcsgroup set falldamage event_var(userid) 0
+		es wcsgroup set falldamage event_var(userid) 1
 	}
 	es wcsgroup set blackout event_var(userid) 1
 	es wcsgroup set helicopter event_var(userid) 1
