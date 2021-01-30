@@ -10,8 +10,8 @@ For this package to work, it is required that you first install the following:
 
 
 ## What does this package do? - And what does it contain?
-Installing this package on to your server will add 11 new races to your Warcraft-Source server.
-All of the 11 races are remastered/reworked versions of Holliday's races. Unlike the previously released Holliday races & racepacks this one will not cause your server to occassionally crash, as all of these type of issues has been fixed. In addition this package contains a few races that have never previously been released publicly. 
+Installing this package on to your server will add 10 new races to your Warcraft-Source server.
+All of the 10 races are remastered/reworked versions of Holliday's races. Unlike the previously released Holliday races & racepacks this one will not cause your server to occassionally crash, as all of these type of issues has been fixed. In addition this package contains a few races that have never previously been released publicly. 
 
 
 **List of races:**
@@ -21,11 +21,9 @@ All of the 11 races are remastered/reworked versions of Holliday's races. Unlike
 - Dwarf Warrior
 - Fera
 - Fire Harpi
-- Hell Sloth
 - Hell Wrath
 - Highelf Archer
 - Pharaoh
-- Squirtle
 - Troll Mercenary
 
 
