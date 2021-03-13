@@ -13,6 +13,7 @@ block load
 	es_load wcs/tools/manifest/bloodelf
 	es_load wcs/tools/manifest/devil_jin
 	es_load wcs/tools/manifest/dwarfen_warrior
+	es_load wcs/tools/manifest/goku
 	es_load wcs/tools/manifest/fire_harpi
 	es_load wcs/tools/manifest/highelf
 	es_load wcs/tools/manifest/pharaoh
@@ -26,6 +27,7 @@ block unload
 	es_unload wcs/tools/manifest/bloodelf
 	es_unload wcs/tools/manifest/devil_jin
 	es_unload wcs/tools/manifest/dwarfen_warrior
+	es_unload wcs/tools/manifest/goku
 	es_unload wcs/tools/manifest/fire_harpi
 	es_unload wcs/tools/manifest/highelf
 	es_unload wcs/tools/manifest/pharaoh
